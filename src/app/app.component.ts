@@ -2,9 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  title = 'exampleAngular';
+  simpleInputValue = '';
+  componentInputValue = '';
+  checkStateValue = '';
+  count: number = 0;
+  increase($event: any): void {
+    this.count++;
+    console.log($event);
+  }
 }
