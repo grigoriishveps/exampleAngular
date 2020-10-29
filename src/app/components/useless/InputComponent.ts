@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-
+import { NgForm} from '@angular/forms';
 @Component({
   selector: 'incomp',
   template: `<input type="text" [ngModel]="text" (ngModelChange)="onTextChange($event)">`

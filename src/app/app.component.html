@@ -4,23 +4,35 @@
 
 <!-- Toolbar -->
 
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <a class="navbar-brand" href="#">Top navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+<!--        <a  href="#">Home <span class="sr-only">(current)</span></a>-->
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/users">List users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
 <div>
-  <p>Количество кликов {{count}}</p>
-  <button (click)="increase($event)">Click</button>
-  <div>
-    <h3>Обычный input</h3>
-    <input [(ngModel)]="simpleInputValue" type="text" />
-    <outcomp [text]="simpleInputValue"> </outcomp>
-  </div>
-  <div>
-    <h3>Компонентный input</h3>
-    <incomp [(text)]="componentInputValue"></incomp>
-    <outcomp [text]="componentInputValue"> </outcomp>
-  </div>
-  <div>
-    <h3>Проверка жизненного цикла компонента вывода</h3>
-    <input [(ngModel)]="checkStateValue" type="text" />
-    <outCompWithCheck [text]="checkStateValue"> </outCompWithCheck>
-  </div>
-  <div><p bold> Проверка Директивы</p></div>
+  <router-outlet></router-outlet>
+<!--  <button (click)="goHome()">На главную</button>-->
 </div>
