@@ -7,8 +7,9 @@ import { ActivatedRoute} from '@angular/router';
   selector: 'profile-app',
   template: `<div>
                     <h4>About</h4>
-<!--                    <p>Имя пользователя: {{user?.name}}</p>-->
-                    <p>Возраст пользователя: {{user?.age}}</p>
+                    <p>Имя пользователя: {{user?.first_name}}</p>
+                    <mat-spinner></mat-spinner>
+<!--                    <p>Возраст пользователя: {{user?.age}}</p>-->
                </div>`
 })
 export class ProfileComponent implements OnInit {

@@ -2,7 +2,7 @@ export class User{
   _id?: string;
   first_name: string;
   last_name: string;
-  age: number;
+  date_birth: Date;
   email: string;
   sex: string;
   phone_number: string;
@@ -10,7 +10,7 @@ export class User{
   constructor(obj: any){
     this.first_name = obj.first_name;
     this.last_name = obj.last_name;
-    this.age = obj.age;
+    this.date_birth = obj.date_birth;
     this.address = obj.address;
     this.email = obj.email;
     this.sex = obj.sex;
@@ -20,4 +20,9 @@ export class User{
 
 export class Users{
   users: User[];
+}
+
+export class UsersPage{
+  users: User[];
+  total: number;
 }

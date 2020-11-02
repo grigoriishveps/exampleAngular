@@ -8,7 +8,7 @@ import {Subscription} from 'rxjs';
   selector: 'contact-profile-app',
   template: `<div>
                     <p>Имя пользователя: {{user?.first_name}}</p>
-                    <p>Возраст пользователя: {{user?.age}}</p>
+<!--                    <p>Возраст пользователя: {{user?.age}}</p>-->
                     <a [routerLink]="['change']">To Change</a>
                </div>`
 })

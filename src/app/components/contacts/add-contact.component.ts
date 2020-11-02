@@ -3,13 +3,23 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpService} from '../../services/user.service';
 import {User} from '../../user';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ModalDismissReasons, NgbActiveModal, NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import {
+  ModalDismissReasons,
+  NgbActiveModal,
+  NgbDate,
+  NgbDateAdapter,
+  NgbDateNativeAdapter,
+  NgbModal,
+  NgbModalRef
+} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClient} from '@angular/common/http';
 
 
 @Component({
   selector:'add-contact-app',
-  templateUrl:'add-contact.component.html'
+  styleUrls: ['contact.component.css'],
+  templateUrl:'add-contact.component.html',
+  providers: [{provide: NgbDateAdapter, useClass: NgbDateNativeAdapter}]
 })
 
 export class AddContactComponent{
@@ -27,11 +37,11 @@ export class AddContactComponent{
     this.contactReactiveForm = new FormGroup({
       first_name: new FormControl('', Validators.required),
       last_name: new FormControl(''),
-      age: new FormControl('', Validators.required),
-      phone_number: new FormControl(''),
+      phone_number: new FormControl('', Validators.pattern("[0-9]{10}")),
       address: new FormControl(''),
       email: new FormControl('',[Validators.required, Validators.email]),
-      sex: new FormControl('M')
+      sex: new FormControl('M'),
+      date_birth: new FormControl('', Validators.required)
     });
   }
 
@@ -82,5 +92,9 @@ export class AddContactComponent{
   goUserList(){
     this.modalOpenRef.close();
     this.router.navigate(['/users']);
+  }
+
+  today(){
+    this.contactReactiveForm.setValue({date_birth : new Date()});
   }
 }

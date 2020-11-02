@@ -24,6 +24,8 @@ import {ContactsComponent} from './components/contacts/contacts.component';
 import {ContactProfileComponent} from './components/contacts/contact-profile.component';
 import {AddContactComponent} from './components/contacts/add-contact.component';
 import {ChangeContactComponent} from './components/contacts/change-contact.component';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 const appRoutes: Routes = [
@@ -59,7 +61,7 @@ const appRoutes: Routes = [
     ChangeContactComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, ReactiveFormsModule, HttpClientModule, NgbModule
+    BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, ReactiveFormsModule, HttpClientModule, NgbModule, MatProgressSpinnerModule, MatSliderModule
   ],
   providers: [DataService, LogService, HttpService],
   bootstrap: [AppComponent]

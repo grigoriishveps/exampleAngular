@@ -6,7 +6,7 @@ import {User} from '../user';
   selector: 'load-user',
   template: `<div>
                     <p>Имя пользователя: {{user?.first_name}}</p>
-                    <p>Возраст пользователя: {{user?.age}}</p>
+<!--                    <p>Возраст пользователя: {{user?.age}}</p>-->
                </div>`
 })
 export class LoadUserComponent implements OnInit {
